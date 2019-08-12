@@ -1,26 +1,77 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import UserForm from './UserForm';
+import FriendForm from './FriendForm';
+import Data from './Data';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+      age: '',
+      friend: '',
+      friends: []
+    };
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  nextForm(e) {
+    e.preventDefault();
+    // console.log(this.state);
+  }
+
+  addFriend(e) {
+    e.preventDefault();
+    const newFriend = this.state.friend;
+    this.setState({
+      friend: '',
+      friends: [...this.state.friends, newFriend]
+    });
+  }
+
+  deleteFriend = i => e => {
+    e.preventDefault();
+    let friendsArr = this.state.friends;
+    friendsArr.splice(i, 1);
+    this.setState({
+      friends: friendsArr
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  render() {
+      return (
+      <div className="App">
+        <header className="App-header">
+          <UserForm
+            nextForm={ (e) => this.nextForm(e) }
+            handleChange={ (e) => this.handleChange(e) } />
+          <FriendForm
+            friend= { this.state.friend }
+            friends={ this.state.friends }
+            handleChange={ (e) => this.handleChange(e) }
+            addFriend={ (e) => this.addFriend(e) }
+            deleteFriend={ (e) => this.deleteFriend(e) }/>
+          <Data
+            name={ this.state.name }
+            age={ this.state.age }
+            friends={ this.state.friends }
+          />
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
