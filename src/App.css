@@ -26,6 +26,7 @@
 
 .hidden {
   opacity: 0;
+  pointer-events: none;
 }
 
 .row, .column {
@@ -33,7 +34,7 @@
 }
 
 .row {
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   width: 100%;
 }
 
@@ -42,9 +43,13 @@
   margin: 10px;
 }
 
-.user-form {
+.zero-margin {
+  margin: 0;
+}
+
+form {
   position: relative;
-  animation: fadeAndMove .5s ease;
+  /* animation: fadeAndMove .5s ease; */
   padding: 20px;
   background-color: #fed7d9;
   box-shadow: 0px 5px 14px -2px darkgrey;
@@ -65,11 +70,13 @@ button {
   border: none;
   background-color: rgb(225, 43, 152);
   text-align: center;
+  font-size: 14px;
+  font-weight: 700;
   padding: 10px;
   margin: 0 10px 10px;
   width: 100%;
   color: white;
-  transition: color .2s linear, background-color .2s linear;
+  transition: color .1s linear, background-color .1s linear;
 }
 
 button:hover {
@@ -81,3 +88,41 @@ input, button:active, button:focus {
   border: none;
   outline: none;
 }
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: circle;
+}
+
+#friend-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+#friend-list .row {
+  justify-content: space-around;
+}
+
+.friend {
+  font-size: 15px;
+  width: 100%;
+}
+
+.delete-friend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  line-height: 0px;
+}
+
+/* #friend-list .row span {
+
+} */

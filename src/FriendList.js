@@ -6,13 +6,15 @@ class FriendList extends React.Component {
     const { friends } = this.props;
 
     return (
-      <ul>
+      <ul id="friend-list">
       {
         friends.map((friend, i) => {
           return (
-            <li key={i}>
-              <span> { friend }</span>
-              <button onClick={ this.props.deleteFriend(i) }>-</button>
+            <li key={i} className="row">
+
+                <span className="friend"> { friend }</span>
+                <button className="delete-friend" onClick={ this.props.deleteFriend(i) }>-</button>
+
             </li>
           )
         })

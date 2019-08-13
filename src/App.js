@@ -24,6 +24,13 @@ class App extends React.Component {
 
   nextForm(e) {
     e.preventDefault();
+    document.getElementById('user-form').classList.add('hidden');
+    document.getElementById('friend-form').classList.remove('hidden');
+  }
+
+  displayData() {
+    document.getElementById('friend-form').classList.add('hidden');
+    document.getElementById('data').classList.remove('hidden');
   }
 
   addFriend(e) {
@@ -46,6 +53,7 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.displayData();
   }
 
   render() {

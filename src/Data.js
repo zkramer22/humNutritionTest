@@ -6,7 +6,7 @@ class Data extends React.Component {
     const { name, age, friends } = this.props;
 
     return (
-      <div className="data hidden">
+      <div id="data" className="hidden">
         <p>name: { name }</p>
         <p>age: { age }</p>
 

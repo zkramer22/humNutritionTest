@@ -4,7 +4,7 @@ class UserForm extends React.Component {
 
   render() {
       return (
-        <form className="user-form">
+        <form id="user-form">
           <div className="row">
             <div className="column">
                 <label>Name:</label>
