@@ -3,33 +3,37 @@ import React from 'react';
 class UserForm extends React.Component {
 
   render() {
-      return (
-        <form id="user-form">
-          <div className="row">
-            <div className="column">
-              <label>Name:</label>
-              <input
-                placeholder="Name"
-                name="name"
-                value={ this.props.name }
-                onChange={ e => this.props.handleChange(e) }/>
-            </div>
-            <div className="column">
-              <label>Age:</label>
-              <input
-                placeholder="Age"
-                type="number"
-                name="age"
-                value={ this.props.age }
-                onChange={e => this.props.handleChange(e) }/>
-            </div>
+    const { handleChange, name, age, nextForm } = this.props;
+
+    return (
+      <form id="user-form">
+        <div className="row">
+          <div className="column">
+            <label>Name:</label>
+            <input
+              placeholder="Name"
+              name="name"
+              value={ name }
+              onChange={ e => handleChange(e) }/>
           </div>
-          <div className="row" id="next">
-            <button onClick={ e => this.props.nextForm(e) }>NEXT</button>
+
+          <div className="column">
+            <label>Age:</label>
+            <input
+              placeholder="Age"
+              type="number"
+              name="age"
+              value={ age }
+              onChange={e => handleChange(e) }/>
           </div>
-        </form>
-      )
-    }
+        </div>
+
+        <div className="row" id="next">
+          <button onClick={ e => nextForm(e) }>NEXT</button>
+        </div>
+      </form>
+    )
+  }
 }
 
 export default UserForm;
