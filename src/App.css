@@ -50,7 +50,7 @@
 
 form, #data {
   position: relative;
-  /* animation: fadeAndMove .5s ease; */
+  animation: fadeAndMove .5s ease;
   padding: 20px;
   background-color: #fed7d9;
   box-shadow: 0px 5px 14px -2px darkgrey;
@@ -128,7 +128,3 @@ li {
   color: black;
   font-size: 15px;
 }
-
-/* #friend-list .row span {
-
-} */
