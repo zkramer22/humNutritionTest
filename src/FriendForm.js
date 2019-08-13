@@ -16,14 +16,14 @@ class FriendForm extends React.Component {
         </div>
 
         <div className="row">
-            <input className="zero-margin"
-              placeholder="friend"
-              name="friend"
-              value={ friend }
-              onChange={ e => handleChange(e) } />
+          <input className="zero-margin"
+            placeholder="friend"
+            name="friend"
+            value={ friend }
+            onChange={ e => handleChange(e) } />
 
-            <button className="zero-margin"
-              onClick={ e => addFriend(e) } >+</button>
+          <button className="zero-margin"
+            onClick={ e => addFriend(e) } >+</button>
         </div>
 
         <FriendList friends={ friends } deleteFriend={ deleteFriend }/>

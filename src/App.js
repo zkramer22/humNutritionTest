@@ -16,13 +16,13 @@ class App extends React.Component {
     };
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   }
 
-  nextForm(e) {
+  nextForm = e => {
     e.preventDefault();
     document.getElementById('user-form').classList.add('hidden');
     document.getElementById('friend-form').classList.remove('hidden');
@@ -33,7 +33,7 @@ class App extends React.Component {
     document.getElementById('data').classList.remove('hidden');
   }
 
-  addFriend(e) {
+  addFriend = e => {
     e.preventDefault();
     const newFriend = this.state.friend;
     this.setState({
@@ -51,12 +51,12 @@ class App extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     this.displayData();
   }
 
-  startOver(e) {
+  startOver = e => {
     e.preventDefault();
     this.setState({
       name: '',
@@ -71,24 +71,23 @@ class App extends React.Component {
   render() {
       return (
       <div className="App">
-          <UserForm
-            name={ this.state.name }
-            age={ this.state.age }
-            nextForm={ e => this.nextForm(e) }
-            handleChange={ e => this.handleChange(e) } />
-          <FriendForm
-            friend= { this.state.friend }
-            friends={ this.state.friends }
-            handleChange={ e => this.handleChange(e) }
-            addFriend={ e => this.addFriend(e) }
-            deleteFriend={ e => this.deleteFriend(e) }
-            handleSubmit={ e => this.handleSubmit(e) }/>
-          <Data
-            name={ this.state.name }
-            age={ this.state.age }
-            friends={ this.state.friends }
-            startOver={ e => this.startOver(e) }
-          />
+        <UserForm
+          name={ this.state.name }
+          age={ this.state.age }
+          nextForm={ e => this.nextForm(e) }
+          handleChange={ e => this.handleChange(e) } />
+        <FriendForm
+          friend= { this.state.friend }
+          friends={ this.state.friends }
+          handleChange={ e => this.handleChange(e) }
+          addFriend={ e => this.addFriend(e) }
+          deleteFriend={ e => this.deleteFriend(e) }
+          handleSubmit={ e => this.handleSubmit(e) } />
+        <Data
+          name={ this.state.name }
+          age={ this.state.age }
+          friends={ this.state.friends }
+          startOver={ e => this.startOver(e) } />
       </div>
     );
   }
