@@ -3,14 +3,14 @@ import React from 'react';
 class Data extends React.Component {
 
   render() {
-    const { name, age, friends } = this.props;
+    const { name, age, friends, startOver } = this.props;
 
     return (
       <div id="data" className="hidden">
         <p>name: { name }</p>
         <p>age: { age }</p>
 
-        <p>Friends:</p>
+        <p><strong>Friends:</strong></p>
         {
           friends.map((friend, i) => {
             return (
@@ -18,6 +18,7 @@ class Data extends React.Component {
             )
           })
         }
+        <button onClick={ startOver }>Start Over</button>
       </div>
     )
   }

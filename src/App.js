@@ -56,6 +56,11 @@ class App extends React.Component {
     this.displayData();
   }
 
+  startOver(e) {
+    e.preventDefault();
+    
+  }
+
   render() {
       return (
       <div className="App">
@@ -73,6 +78,7 @@ class App extends React.Component {
             name={ this.state.name }
             age={ this.state.age }
             friends={ this.state.friends }
+            startOver={ e => this.startOver(e) }
           />
       </div>
     );
