@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/humNutritionTest/static/css/main.beff2f9c.chunk.css",
+    "main.js": "/humNutritionTest/static/js/main.25996e72.chunk.js",
+    "main.js.map": "/humNutritionTest/static/js/main.25996e72.chunk.js.map",
+    "runtime~main.js": "/humNutritionTest/static/js/runtime~main.91ce7210.js",
+    "runtime~main.js.map": "/humNutritionTest/static/js/runtime~main.91ce7210.js.map",
+    "static/js/2.4011efa1.chunk.js": "/humNutritionTest/static/js/2.4011efa1.chunk.js",
+    "static/js/2.4011efa1.chunk.js.map": "/humNutritionTest/static/js/2.4011efa1.chunk.js.map",
+    "index.html": "/humNutritionTest/index.html",
+    "precache-manifest.9366b190a6839631062fb171b1904163.js": "/humNutritionTest/precache-manifest.9366b190a6839631062fb171b1904163.js",
+    "service-worker.js": "/humNutritionTest/service-worker.js",
+    "static/css/main.beff2f9c.chunk.css.map": "/humNutritionTest/static/css/main.beff2f9c.chunk.css.map"
+  }
+}
