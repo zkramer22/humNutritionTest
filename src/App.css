@@ -35,7 +35,6 @@
 }
 
 .row {
-  /* flex-wrap: wrap; */
   width: 100%;
 }
 
@@ -83,11 +82,16 @@ button {
 button:hover {
   color: rgb(225, 43, 152);
   background-color: white;
+  cursor: pointer;
 }
 
 input, button:active, button:focus {
   border: none;
   outline: none;
+}
+
+input:focus {
+  outline: 1px solid lightblue;
 }
 
 ul {
