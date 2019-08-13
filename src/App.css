@@ -1,37 +1,83 @@
 * {
-
+  box-sizing: border-box;
 }
 
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: white;
+  min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes fadeAndMove {
+  0% {
+    opacity: 0;
+    left: 100px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden {
+  opacity: 0;
+}
+
+.row, .column {
+  display: flex;
+}
+
+.row {
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  flex-direction: column;
+  margin: 10px;
+}
+
+.user-form {
+  position: relative;
+  animation: fadeAndMove .5s ease;
+  padding: 20px;
+  background-color: #fed7d9;
+  box-shadow: 0px 5px 14px -2px darkgrey;
+}
+
+label {
+  font-size: 16px;
+  color: black;
+}
+
+input {
+  padding: 10px;
+  margin: 10px auto;
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  background-color: rgb(225, 43, 152);
+  text-align: center;
+  padding: 10px;
+  margin: 0 10px 10px;
+  width: 100%;
+  color: white;
+  transition: color .2s linear, background-color .2s linear;
+}
+
+button:hover {
+  color: rgb(225, 43, 152);
+  background-color: white;
+}
+
+input, button:active, button:focus {
+  border: none;
+  outline: none;
 }

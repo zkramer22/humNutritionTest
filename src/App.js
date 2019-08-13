@@ -8,7 +8,6 @@ import Data from './Data';
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: '',
       age: '',
@@ -25,7 +24,6 @@ class App extends React.Component {
 
   nextForm(e) {
     e.preventDefault();
-    // console.log(this.state);
   }
 
   addFriend(e) {
@@ -53,22 +51,21 @@ class App extends React.Component {
   render() {
       return (
       <div className="App">
-        <header className="App-header">
           <UserForm
-            nextForm={ (e) => this.nextForm(e) }
-            handleChange={ (e) => this.handleChange(e) } />
+            nextForm={ e => this.nextForm(e) }
+            handleChange={ e => this.handleChange(e) } />
           <FriendForm
             friend= { this.state.friend }
             friends={ this.state.friends }
-            handleChange={ (e) => this.handleChange(e) }
-            addFriend={ (e) => this.addFriend(e) }
-            deleteFriend={ (e) => this.deleteFriend(e) }/>
+            handleChange={ e => this.handleChange(e) }
+            addFriend={ e => this.addFriend(e) }
+            deleteFriend={ e => this.deleteFriend(e) }
+            handleSubmit={ e => this.handleSubmit(e) }/>
           <Data
             name={ this.state.name }
             age={ this.state.age }
             friends={ this.state.friends }
           />
-        </header>
       </div>
     );
   }

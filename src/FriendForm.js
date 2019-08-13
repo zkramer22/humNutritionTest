@@ -4,10 +4,10 @@ import FriendList from './FriendList';
 class FriendForm extends React.Component {
 
   render() {
-    const { friends, deleteFriend, handleSubmit } = this.props;
+    const { friends, deleteFriend } = this.props;
 
     return (
-      <form className="friend-form">
+      <form className="friend-form hidden">
         <label>Friend Name:</label>
         <input
         placeholder="friend"
@@ -19,7 +19,7 @@ class FriendForm extends React.Component {
 
         <FriendList friends={ friends } deleteFriend={ deleteFriend }/>
 
-        <button onClick={ handleSubmit }>SUBMIT</button>
+        <button onClick={ e => this.props.handleSubmit(e) }>SUBMIT</button>
       </form>
     )
   }
