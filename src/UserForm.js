@@ -7,19 +7,21 @@ class UserForm extends React.Component {
         <form id="user-form">
           <div className="row">
             <div className="column">
-                <label>Name:</label>
-                <input
-                  placeholder="Name"
-                  name="name"
-                  onChange={ e => this.props.handleChange(e) }/>
+              <label>Name:</label>
+              <input
+                placeholder="Name"
+                name="name"
+                value={ this.props.name }
+                onChange={ e => this.props.handleChange(e) }/>
             </div>
             <div className="column">
               <label>Age:</label>
               <input
-              placeholder="Age"
-              type="number"
-              name="age"
-              onChange={e => this.props.handleChange(e) }/>
+                placeholder="Age"
+                type="number"
+                name="age"
+                value={ this.props.age }
+                onChange={e => this.props.handleChange(e) }/>
             </div>
           </div>
           <div className="row" id="next">

@@ -58,13 +58,22 @@ class App extends React.Component {
 
   startOver(e) {
     e.preventDefault();
-    
+    this.setState({
+      name: '',
+      age: '',
+      friend: '',
+      friends: []
+    });
+    document.getElementById('data').classList.add('hidden');
+    document.getElementById('user-form').classList.remove('hidden');
   }
 
   render() {
       return (
       <div className="App">
           <UserForm
+            name={ this.state.name }
+            age={ this.state.age }
             nextForm={ e => this.nextForm(e) }
             handleChange={ e => this.handleChange(e) } />
           <FriendForm

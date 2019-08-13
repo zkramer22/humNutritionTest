@@ -18,7 +18,8 @@ class Data extends React.Component {
             )
           })
         }
-        <button onClick={ startOver }>Start Over</button>
+        <button className="zero-margin"
+          onClick={ startOver }>Start Over</button>
       </div>
     )
   }
